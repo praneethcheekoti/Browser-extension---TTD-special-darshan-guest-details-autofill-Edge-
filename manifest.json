@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "TTD Booking Auto-Fill",
+  "version": "1.0.0",
+  "description": "Auto-fill pilgrim details for TTD temple booking - Lightning fast!",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://ttdevasthanams.ap.gov.in/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TTD Booking Auto-Fill"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ttdevasthanams.ap.gov.in/spat/pilgrim-details*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
+
+
